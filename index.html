@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نظام تحليل درجات الطلاب</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 30px 15px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000015;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #173b70;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background-color: #173b70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #24569a;
+        }
+
+        .result {
+            margin-top: 25px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #173b70;
+            color: white;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .review {
+            color: #c0392b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>نظام تحليل درجات الطلاب</h1>
+
+        <h2>أدخل بيانات الطالب</h2>
+
+        <form id="studentForm">
+
+            <div class="form-group">
+                <label>رقم الجلوس</label>
+                <input type="number" id="studentId" required>
+            </div>
+
+            <div class="form-group">
+                <label>اسم الطالب</label>
+                <input type="text" id="studentName" required>
+            </div>
+
+            <div class="form-group">
+                <label>الدرجة الأولى</label>
+                <input type="number" id="grade1" min="0" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label>الدرجة الثانية</label>
+                <input type="number" id="grade2" min="0" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label>الدرجة الثالثة</label>
+                <input type="number" id="grade3" min="0" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label>نسبة الحضور (%)</label>
+                <input type="number" id="attendance" min="0" max="100" required>
+            </div>
+
+            <button type="submit">تحليل النتيجة</button>
+
+        </form>
+
+        <div class="result" id="studentResult">
+
+            <h2>تقرير الطالب</h2>
+
+            <table>
+                <tbody id="resultBody"></tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
